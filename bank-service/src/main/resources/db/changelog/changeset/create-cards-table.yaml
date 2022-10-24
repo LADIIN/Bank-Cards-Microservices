@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cards
+      author: Vladislav
+      changes:
+        - createTable:
+            tableName: cards
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(16)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(30)
+              - column:
+                  name: surname
+                  type: varchar(30)
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: cards_account_id_fk
+                    referencedTableName: accounts
+                    referencedColumnNames: id
+                    deleteCascade: true

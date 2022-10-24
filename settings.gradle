@@ -1,0 +1,5 @@
+rootProject.name = 'Bank-Cards-Microservices'
+include 'bank-service'
+include 'history-service'
+include 'common'
+

@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-account-data
+      author: Vladislav
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: acc_number
+                  value: 2323232
+              - column:
+                  name: currency
+                  value: USD
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: user_id
+                  value: 1

@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-default-card
+      author: Vladislav
+      changes:
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: number
+                  value: 3843232
+              - column:
+                  name: status
+                  value: 100
+              - column:
+                  name: name
+                  value: Ivan
+              - column:
+                  name: surname
+                  value: Ivanov
+              - column:
+                  name: account_id
+                  value: 1

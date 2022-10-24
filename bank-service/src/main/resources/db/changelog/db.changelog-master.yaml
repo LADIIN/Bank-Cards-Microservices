@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-roles-table.yaml
+  - include:
+      file: db/changelog/changeset/create-user-table.yaml
+  - include:
+      file: db/changelog/changeset/create-user-roles-table.yaml
+  - include:
+      file: db/changelog/changeset/create-accounts-table.yaml
+  - include:
+      file: db/changelog/changeset/create-cards-table.yaml
+  - include:
+      file: db/changelog/changeset/add-username-password-columns.yaml
+  - include:
+      file: db/changelog/changeset/insert-init-users-data.yaml
+  - include:
+      file: db/changelog/changeset/insert-init-account-data.yaml
+  - include:
+      file: db/changelog/changeset/insert-init-cards-data.yaml

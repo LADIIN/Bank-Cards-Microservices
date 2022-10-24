@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-default-card
+      author: Vladislav
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: name
+                  value: Ivan
+              - column:
+                  name: patronymic
+                  value: Ivanovich
+              - column:
+                  name: surname
+                  value: Ivanov
+              - column:
+                  name: id_number
+                  value: 2332323232
+              - column:
+                  name: birth_date
+                  value: 01-01-200
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: username
+                  value: user
+              - column:
+                  name: password
+                  value: $2a$04$xwjozdVJYStnqASvrPPY0.4ibkPFC2biR0cQWPn5TK0rdbvRVIp.a
