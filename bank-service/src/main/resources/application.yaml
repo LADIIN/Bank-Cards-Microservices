@@ -1,6 +1,8 @@
+server:
+  port: 8081
 spring:
   liquibase:
-    enabled: false
+    enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -23,10 +25,12 @@ spring:
     port: 6379
     password: root
   kafka:
-    bootstrap-servers: localhost:9093
-    topic-name: cards
+    bootstrap-servers: localhost:9092
+    bank-to-history-topic-name: bank-to-history-service
+    history-to-bank-topic-name: history-to-bank-service
     partitions-amount: 1
-    replication-factor: 1
+    group-id: history-service
+    producer-id: bank-service
 
 
 jwt:

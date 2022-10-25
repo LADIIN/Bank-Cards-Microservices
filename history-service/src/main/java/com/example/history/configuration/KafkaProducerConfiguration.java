@@ -1,8 +1,9 @@
-package com.example.bank.configuration;
+package com.example.history.configuration;
 
-import com.example.bank.properties.KafkaProperties;
+import com.example.history.properties.KafkaProperties;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.example.message.CardEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -29,12 +30,12 @@ public class KafkaProducerConfiguration {
     }
 
     @Bean
-    public ProducerFactory<String, Object> producerFactory() {
+    public ProducerFactory<String, CardEvent> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerProperties());
     }
 
     @Bean
-    public KafkaTemplate<String, Object> kafkaTemplate() {
+    public KafkaTemplate<String, CardEvent> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 }

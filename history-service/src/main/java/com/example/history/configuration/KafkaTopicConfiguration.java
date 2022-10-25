@@ -1,6 +1,6 @@
-package com.example.bank.configuration;
+package com.example.history.configuration;
 
-import com.example.bank.properties.KafkaProperties;
+import com.example.history.properties.KafkaProperties;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
@@ -25,10 +25,18 @@ public class KafkaTopicConfiguration {
         return new KafkaAdmin(configs);
     }
 
+//    @Bean
+//    public NewTopic bankToHistoryServiceTopic() {
+//        return TopicBuilder.name(kafkaProperties.getBankToHistoryTopicName())
+//                .partitions(kafkaProperties.getPartitionsAmount())
+//                .compact()
+//                .build();
+//    }
+
     @Bean
-    public NewTopic cardsTopic() {
-        return TopicBuilder.name(kafkaProperties.getTopicName())
-                .partitions(kafkaProperties.getPartitionAmount())
+    public NewTopic historyToBankTopic() {
+        return TopicBuilder.name(kafkaProperties.getHistoryToBankTopicName())
+                .partitions(kafkaProperties.getPartitionsAmount())
                 .compact()
                 .build();
     }

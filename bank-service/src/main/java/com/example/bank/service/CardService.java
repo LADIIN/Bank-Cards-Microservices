@@ -2,13 +2,17 @@ package com.example.bank.service;
 
 import com.example.bank.entity.Card;
 import com.example.bank.exception.NotFoundException;
-import com.example.bank.producer.CardProducer;
+import com.example.bank.producer.CardEventProducer;
 import com.example.bank.properties.CardStatusProperties;
 import com.example.bank.repository.CardRepository;
 import lombok.RequiredArgsConstructor;
+import org.example.message.CardEvent;
+import org.example.message.EventStatus;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -17,7 +21,7 @@ public class CardService {
 
     private final CardRepository cardRepository;
     private final CardStatusProperties cardStatusProperties;
-    private final CardProducer cardProducer;
+    private final CardEventProducer cardProducer;
 
     public Card findById(Long id) {
         Optional<Card> cardOptional = cardRepository.findById(id);
@@ -33,6 +37,14 @@ public class CardService {
     @Transactional
     public Card save(Card card) {
         Card savedCard = cardRepository.save(card);
+        Timestamp creationTime = Timestamp.valueOf(LocalDateTime.now());
+        CardEvent cardEvent = new CardEvent(card.getId(), card.getAccount().getId(), creationTime, EventStatus.CREATED);
+        cardProducer.send(cardEvent);
         return savedCard;
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        cardRepository.deleteById(id);
     }
 }

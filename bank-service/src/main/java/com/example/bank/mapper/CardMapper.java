@@ -23,9 +23,6 @@ public class CardMapper {
         card.setNumber(cardDto.getNumber());
         card.setName(cardDto.getName());
         card.setStatus(cardDto.getStatus());
-        Account account = new Account();
-        account.setId(cardDto.getId());
-        card.setAccount(account);
         return card;
     }
 }

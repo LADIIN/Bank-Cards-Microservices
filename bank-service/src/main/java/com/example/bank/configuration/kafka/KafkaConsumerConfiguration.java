@@ -1,6 +1,6 @@
-package com.example.history.configuration;
+package com.example.bank.configuration.kafka;
 
-import com.example.history.properties.KafkaProperties;
+import com.example.bank.properties.KafkaProperties;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
