@@ -12,7 +12,9 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 public class KafkaProperties {
 
     String bootstrapServers;
-    String topicName;
-    Integer partitionAmount;
-    Short partitionFactor;
+    String bankToHistoryTopicName;
+    String historyToBankTopicName;
+    Integer partitionsAmount;
+    String groupId;
+    String producerId;
 }

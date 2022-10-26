@@ -1,10 +1,10 @@
 package com.example.bank.security;
 
-import com.example.bank.entity.RefreshTokenCache;
+import com.example.bank.domain.entity.RefreshTokenCache;
 import com.example.bank.exception.JwtAuthenticationException;
 import com.example.bank.exception.NotFoundException;
 import com.example.bank.properties.JwtProperties;
-import com.example.bank.service.RefreshTokenCacheService;
+import com.example.bank.domain.service.RefreshTokenCacheService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;

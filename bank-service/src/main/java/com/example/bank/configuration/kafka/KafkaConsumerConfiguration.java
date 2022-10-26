@@ -1,6 +1,6 @@
-package com.example.history.configuration;
+package com.example.bank.configuration.kafka;
 
-import com.example.history.properties.KafkaProperties;
+import com.example.bank.properties.KafkaProperties;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.example.message.CardEvent;
@@ -24,12 +24,12 @@ public class KafkaConsumerConfiguration {
 
     @Bean
     public ConsumerFactory<String, CardEvent> consumerFactory(JsonDeserializer<CardEvent> cardEventJsonDeserializer) {
-        Map<String, Object> properties = new HashMap<>();
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
-        properties.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaProperties.getGroupId());
-        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, cardEventJsonDeserializer);
-        return new DefaultKafkaConsumerFactory<>(properties, new JsonDeserializer<>(), cardEventJsonDeserializer);
+        Map<String, Object> props = new HashMap<>();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, cardEventJsonDeserializer);
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaProperties.getGroupId());
+        return new DefaultKafkaConsumerFactory<>(props, new JsonDeserializer<>(), cardEventJsonDeserializer);
     }
 
     @Bean

@@ -12,5 +12,8 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 public class KafkaProperties {
 
     String bootstrapServers;
-    String topicName;
+    String bankToHistoryTopicName;
+    String historyToBankTopicName;
+    Integer partitionsAmount;
+    String groupId;
 }

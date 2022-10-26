@@ -2,7 +2,7 @@ package com.example.bank.controller;
 
 import com.example.bank.controller.dto.JwtRefreshTokenDto;
 import com.example.bank.controller.dto.JwtTokenDto;
-import com.example.bank.service.AuthenticationService;
+import com.example.bank.domain.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

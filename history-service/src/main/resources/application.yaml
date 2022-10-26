@@ -1,3 +1,5 @@
+server:
+  port: 8082
 spring:
   liquibase:
     enabled: true
@@ -18,7 +20,8 @@ spring:
         format_sql: true
 
   kafka:
-    bootstrap-servers: localhost:9093
-    topic-name: cards
+    bootstrap-servers: localhost:9092
+    bank-to-history-topic-name: bank-to-history-service
+    history-to-bank-topic-name: history-to-bank-service
     partitions-amount: 1
-    replication-factor: 1
+    group-id: bank-service;

@@ -1,8 +1,8 @@
 package com.example.bank.security;
 
-import com.example.bank.entity.Employee;
+import com.example.bank.domain.entity.Employee;
 import com.example.bank.exception.NotFoundException;
-import com.example.bank.repository.EmployeeRepository;
+import com.example.bank.domain.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

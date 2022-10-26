@@ -1,7 +1,7 @@
 package com.example.bank.controller;
 
 import com.example.bank.controller.dto.CardDto;
-import com.example.bank.controller.facade.CardFacade;
+import com.example.bank.facade.CardFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
