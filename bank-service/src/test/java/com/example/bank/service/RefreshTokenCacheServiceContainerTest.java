@@ -1,6 +1,7 @@
 package com.example.bank.service;
 
-import com.example.bank.entity.RefreshTokenCache;
+import com.example.bank.domain.entity.RefreshTokenCache;
+import com.example.bank.domain.service.RefreshTokenCacheService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

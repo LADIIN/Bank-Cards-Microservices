@@ -32,12 +32,4 @@ public class KafkaTopicConfiguration {
                 .compact()
                 .build();
     }
-
-    @Bean
-    public NewTopic historyToBankTopic() {
-        return TopicBuilder.name(kafkaProperties.getHistoryToBankTopicName())
-                .partitions(kafkaProperties.getPartitionsAmount())
-                .compact()
-                .build();
-    }
 }

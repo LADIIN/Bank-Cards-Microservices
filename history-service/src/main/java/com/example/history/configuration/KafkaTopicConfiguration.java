@@ -25,14 +25,6 @@ public class KafkaTopicConfiguration {
         return new KafkaAdmin(configs);
     }
 
-//    @Bean
-//    public NewTopic bankToHistoryServiceTopic() {
-//        return TopicBuilder.name(kafkaProperties.getBankToHistoryTopicName())
-//                .partitions(kafkaProperties.getPartitionsAmount())
-//                .compact()
-//                .build();
-//    }
-
     @Bean
     public NewTopic historyToBankTopic() {
         return TopicBuilder.name(kafkaProperties.getHistoryToBankTopicName())

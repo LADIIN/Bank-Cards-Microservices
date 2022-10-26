@@ -2,7 +2,7 @@ package com.example.bank.controller;
 
 import com.example.bank.controller.dto.EmployeeDto;
 import com.example.bank.controller.dto.SpecificationDto;
-import com.example.bank.controller.facade.EmployeeFacade;
+import com.example.bank.facade.EmployeeFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;

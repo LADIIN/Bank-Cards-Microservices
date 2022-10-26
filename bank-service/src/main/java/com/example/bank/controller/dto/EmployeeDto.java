@@ -1,6 +1,6 @@
 package com.example.bank.controller.dto;
 
-import com.example.bank.entity.Status;
+import com.example.bank.domain.entity.Status;
 import lombok.*;
 
 import java.time.LocalDate;
